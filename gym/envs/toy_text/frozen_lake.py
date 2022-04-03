@@ -175,7 +175,17 @@ class FrozenLakeEnv(Env):
             newstate = to_s(newrow, newcol)
             newletter = desc[newrow, newcol]
             done = bytes(newletter) in b"GH"
-            reward = float(newletter == b"G")
+            # ORIGINAL: reward = float(newletter == b"G")
+            # lines 181-188 added by me"
+            if newletter == b"G":
+                reward = 20.0
+            elif newletter == b"H":
+                reward = -1000.0
+            elif newletter == b"F":
+                reward = -100.0
+            else:
+                reward = 0.0
+            # end my addition
             return newstate, reward, done
 
         for row in range(nrow):
