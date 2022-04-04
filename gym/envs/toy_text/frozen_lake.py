@@ -146,7 +146,7 @@ class FrozenLakeEnv(Env):
             desc = MAPS[map_name]
         self.desc = desc = np.asarray(desc, dtype="c")
         self.nrow, self.ncol = nrow, ncol = desc.shape
-        self.reward_range = (0, 1)
+        self.reward_range = (-1000, 20) #(0, 1)
 
         nA = 4
         nS = nrow * ncol
@@ -186,6 +186,7 @@ class FrozenLakeEnv(Env):
             else:
                 reward = 0.0
             # end my addition
+            print(reward)
             return newstate, reward, done
 
         for row in range(nrow):
