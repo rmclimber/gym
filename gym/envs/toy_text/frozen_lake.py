@@ -184,7 +184,7 @@ class FrozenLakeEnv(Env):
             else:
                 reward = 0.0
             # end my addition
-            # print(reward)
+            print(reward)
             return newstate, reward, done
 
         for row in range(nrow):
