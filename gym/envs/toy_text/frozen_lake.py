@@ -181,12 +181,10 @@ class FrozenLakeEnv(Env):
                 reward = 20.0
             elif newletter == b"H":
                 reward = -1000.0
-            elif newletter == b"F":
-                reward = -100.0
             else:
                 reward = 0.0
             # end my addition
-            print(reward)
+            # print(reward)
             return newstate, reward, done
 
         for row in range(nrow):
