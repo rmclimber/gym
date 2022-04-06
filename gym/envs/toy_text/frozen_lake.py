@@ -178,13 +178,13 @@ class FrozenLakeEnv(Env):
             # ORIGINAL: reward = float(newletter == b"G")
             # lines 181-188 added by me"
             if newletter == b"G":
-                reward = 30.0
+                reward = 100.0
             elif newletter == b"H":
-                reward = -10.0
+                reward = -100.0
             else:
                 reward = -1.0
             # end my addition
-            # print(reward)
+            print(reward)
             return newstate, reward, done
 
         for row in range(nrow):
