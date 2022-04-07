@@ -182,7 +182,7 @@ class FrozenLakeEnv(Env):
             elif newletter == b"H":
                 reward = -100.0
             else:
-                reward = -1.0
+                reward = -.1
             # end my addition
             print(reward)
             return newstate, reward, done
